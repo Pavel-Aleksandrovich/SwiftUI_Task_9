@@ -34,10 +34,10 @@ struct ContentView: View {
                             
                             let center = CGPoint(x: size.width / 2, y: size.height / 2)
                             
-                            var shapeOne = ctx.resolveSymbol(id: 1)!
+                            let shapeOne = ctx.resolveSymbol(id: 1)!
                             ctx.draw(shapeOne, at: center)
                             
-                            var shapeTwo = ctx.resolveSymbol(id: 2)!
+                            let shapeTwo = ctx.resolveSymbol(id: 2)!
                             ctx.draw(shapeTwo, at: center)
                             
                         }
@@ -75,10 +75,7 @@ struct ContentView: View {
     }
     
     private func setPosition(_ position: CGSize) {
-        withAnimation(.interpolatingSpring(
-            stiffness: 200,
-            damping: 20
-        )) {
+        withAnimation(.interpolatingSpring(stiffness: 200, damping: 20)) {
             self.position = position
         }
     }
